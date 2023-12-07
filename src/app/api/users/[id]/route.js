@@ -13,3 +13,14 @@ export function GET(req, res)
         {status: 200}
         )
 }
+
+export async function PUT(req, res)
+{
+    let payload = await req.json();
+    let userid = res.params.id;
+    payload.id = userid;
+    console.log(payload);
+    if(!payload.id || !payload.name || !payload.email || !payload.age)
+    return NextResponse.json({result:"pass data correctly", success: false}, {status: 400})
+    return NextResponse.json({result: payload, success: true}, {status: 200})
+}
