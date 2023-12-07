@@ -18,6 +18,7 @@ import { NextResponse } from "next/server";
 
  export function DELETE(req, content){
    let id = content.params.id;
+   console.log(id)
    //code to delte specific record will be written later
    if(id)
    return NextResponse.json({result: "Id Deleted", success: true}, {status: 200})

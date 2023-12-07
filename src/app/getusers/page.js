@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DeleteUser from "../utils/DeleteUser";
 
 async function GetApi() {
     let data = await fetch("http://localhost:3000/api/users");
@@ -20,7 +21,10 @@ async function GetApi() {
             </Link>
             <Link href={`/getusers/${item.id}/update`}>
               edit
-            </Link>
+            </Link>  
+            <DeleteUser id={item.id} />
+            {/* we cant use async await in client functions and we have to use onclick function here to add a delte btn therefore we will creata a seperate client component for delte and import that here  */}
+
           </div>
         ))}
       </div>
