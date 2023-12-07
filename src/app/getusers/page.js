@@ -18,6 +18,9 @@ async function GetApi() {
             <Link href={`/getusers/${item.id}`}>
               {item.name}
             </Link>
+            <Link href={`/getusers/${item.id}/update`}>
+              edit
+            </Link>
           </div>
         ))}
       </div>
